@@ -84,6 +84,18 @@
     	</div>
     </section>
 
+    <section class="ftco-section">
+        <div class="container">
+            <div th:each="el : ${allPosts}" class="row d-flex">
+                <div class="col-md-6 d-flex ftco-animate">
+                    <h3 th:text="${el.title}"></h3>
+                    <p th:text="${el.anons}"></p>
+                    <a th:href="'/about/' + ${el.id}">Детальнее</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="ftco-section bg-light">
       <div class="container">
       	<div class="row justify-content-center mb-5 pb-3">

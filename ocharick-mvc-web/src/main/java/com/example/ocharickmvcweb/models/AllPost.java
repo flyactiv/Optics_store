@@ -54,4 +54,14 @@ public class AllPost {   //описываем таблицу для баз да�
     public void setViews(int views) {
         this.views = views;
     }
+
+    public AllPost() {
+    }
+
+    public AllPost(String title, String anons, String full_text) {
+        this.title = title;
+        this.anons = anons;
+        this.full_text = full_text;
+    }
+
 }

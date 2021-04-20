@@ -85,13 +85,18 @@
     </section>
 
     <section class="ftco-section">
+        <a href="/addPost" class="nav-link">Add a post</a><br><br><br>
         <div class="container">
             <div th:each="el : ${allPosts}" class="row d-flex">
                 <div class="col-md-6 d-flex ftco-animate">
                     <h3 th:text="${el.title}"></h3>
+                </div>
+                <div class="col-md-6 pl-md-5 ftco-animate">
+                    <h3 th:text="${el.full_text}"></h3>
                     <p th:text="${el.anons}"></p>
                     <a th:href="'/about/' + ${el.id}">Детальнее</a>
                 </div>
+                <p th:text="${el.views}"></p>
             </div>
         </div>
     </section>

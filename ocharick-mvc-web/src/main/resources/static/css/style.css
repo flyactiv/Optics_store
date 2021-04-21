@@ -4,9 +4,35 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
- 
+
+.shop_wrapper.grid_4, .shop_wrapper.grid_5, .shop_wrapper.grid_3 {
+  -webkit-transition: .6s;
+  -o-transition: .6s;
+  transition: .6s;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  margin-bottom: -30px;}
+
+.row {
+  --bs-gutter-x: 1.875rem;
+  --bs-gutter-y: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-top: calc(var(--bs-gutter-y) * -1);
+  margin-right: calc(var(--bs-gutter-x) / -2);
+  margin-left: calc(var(--bs-gutter-x) / -2);}
 
 
+::after, ::before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;}
 
 
 

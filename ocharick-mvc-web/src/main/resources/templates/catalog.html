@@ -104,53 +104,57 @@
     </section>
 
 
-  <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(images/bg_4.jpg);">
-      <div class="overlay"></div>
-      <div class="container">
-          <div class="row justify-content-center">
-              <div class="col-md-10">
-                  <div class="row">
-                      <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
-                          <div class="block-18 text-center">
-                              <div class="text">
-                                  <div class="icon"><span class="flaticon-flower"></span></div>
-                                  <span>Makeup Over Done</span>
-                                  <strong class="number" data-number="3500">0</strong>
+  <div class="container">
+      <div class="row">
+          <div class="col-12">
+
+              <!--shop toolbar start-->
+              <div class="shop_toolbar_wrapper flex-column flex-md-row pb-10 mb-n4">
+
+                  <!-- Shop Top Bar Left start -->
+
+                  <!-- Shop Top Bar Left end -->
+
+              </div>
+              <!--shop toolbar end-->
+
+              <!-- Shop Wrapper Start -->
+              <div class="row shop_wrapper grid_4">
+
+                  <!-- Single Product Start -->
+                  <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 product">
+                      <div th:each="el : ${catalogs}" class="product-inner">
+                          <div class="thumb">
+                              <a href="#" class="image">
+                                  <img th:href="'images/catalog_' + ${el.id} + '.jpg'" class="first-image"  alt="Product">
+                              </a>
+                              <div class="add-cart-btn">
+                                  <button class="btn btn-whited btn-hover-primary text-capitalize add-to-cart">Add To Cart</button>
                               </div>
                           </div>
-                      </div>
-                      <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
-                          <div class="block-18 text-center">
-                              <div class="text">
-                                  <div class="icon"><span class="flaticon-flower"></span></div>
-                                  <span>Procedure</span>
-                                  <strong class="number" data-number="1000">0</strong>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
-                          <div class="block-18 text-center">
-                              <div class="text">
-                                  <div class="icon"><span class="flaticon-flower"></span></div>
-                                  <span>Happy Client</span>
-                                  <strong class="number" data-number="3000">0</strong>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
-                          <div class="block-18 text-center">
-                              <div class="text">
-                                  <div class="icon"><span class="flaticon-flower"></span></div>
-                                  <span>Skin Treatment</span>
-                                  <strong class="number" data-number="900">0</strong>
-                              </div>
+                          <div class="content">
+                              <h5 class="title"><a th:text="${el.title}" href="#"></a></h5>
+                              <span class="price">
+                                            <span th:text="${el.price} + ' $'" class="new"></span>
+                                    </span>
+                              <p th:text="${el.full_text}"></p>
                           </div>
                       </div>
                   </div>
+                  <!-- Single Product End -->
+
+
               </div>
+              <!-- Shop Wrapper End -->
+
+              <!--shop toolbar start-->
+
+              <br><br><br><br>
+              <!--shop toolbar end-->
+
           </div>
       </div>
-  </section>
+  </div>
 
 
     <footer class="ftco-footer ftco-section img">

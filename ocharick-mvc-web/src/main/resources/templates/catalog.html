@@ -103,58 +103,39 @@
     	</div>
     </section>
 
+  <section class="ftco-section">
 
-  <div class="container">
-      <div class="row">
-          <div class="col-12">
-
-              <!--shop toolbar start-->
-              <div class="shop_toolbar_wrapper flex-column flex-md-row pb-10 mb-n4">
-
-                  <!-- Shop Top Bar Left start -->
-
-                  <!-- Shop Top Bar Left end -->
-
-              </div>
-              <!--shop toolbar end-->
-
-              <!-- Shop Wrapper Start -->
-              <div class="row shop_wrapper grid_4">
-
-                  <!-- Single Product Start -->
-                  <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 product">
-                      <div th:each="el : ${catalogs}" class="product-inner">
-                          <div class="thumb">
-                              <a href="#" class="image">
-                                  <img th:href="'images/catalog_' + ${el.id} + '.jpg'" class="first-image"  alt="Product">
-                              </a>
-                              <div class="add-cart-btn">
-                                  <button class="btn btn-whited btn-hover-primary text-capitalize add-to-cart">Add To Cart</button>
-                              </div>
-                          </div>
-                          <div class="content">
-                              <h5 class="title"><a th:text="${el.title}" href="#"></a></h5>
-                              <span class="price">
-                                            <span th:text="${el.price} + ' $'" class="new"></span>
-                                    </span>
-                              <p th:text="${el.full_text}"></p>
-                          </div>
-                      </div>
+      <!-- Single Product Start -->
+      <div class="container">
+          <div th:each="el : ${catalogs}" class="row d-flex border border-light ">
+              <div class="thumb">
+                  <div class="col-md-6 d-flex ftco-animate">
+                      <a th:href="'/catalog/' + ${el.id}" class="image">
+                          <img th:href="'images/catalog_' + ${el.id} + '.jpg'" class="first-image"  alt="Product">
+                      </a>
                   </div>
-                  <!-- Single Product End -->
-
-
               </div>
-              <!-- Shop Wrapper End -->
-
-              <!--shop toolbar start-->
-
-              <br><br><br><br>
-              <!--shop toolbar end-->
-
+              <div class="col-md-6 pl-md-5 ftco-animate">
+                  <div class="content">
+                      <h5 class="title"><a  th:href="'/catalog/' + ${el.id}" th:text="${el.title}" href="#"></a></h5>
+                      <span class="price">
+                          <span th:text="${el.price} + ' $'" class="new"></span>
+                      </span>
+                      <div class="add-cart-btn">
+                          <a th:href="'/catalog_selection/' + ${el.id}">
+                              <button class="btn btn-whited btn-hover-primary text-capitalize add-to-cart">Add To Cart</button>
+                          </a>
+                      </div>
+                      <p th:text="${el.full_text}"></p>
+                  </div>
+              </div>
           </div>
       </div>
-  </div>
+      <!-- Single Product End -->
+  </section>
+
+
+
 
 
     <footer class="ftco-footer ftco-section img">

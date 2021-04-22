@@ -76,7 +76,9 @@
                <p th:text="${el.anons}"></p>
                <h3 th:text="${el.full_text}"><br><br></h3>
                <a th:href="'/about/' + ${el.id} + '/edit'" class=" col-md-6 pl-md-5 btn btn-warning mb-5">Edit</a>
-               <a th:href="'/about/' + ${el.id} + '/remove'" class="col-md-6 pl-md-5 btn btn-warning mb-5">Remove</a>
+               <form th:action="'/about/' + ${el.id} + '/remove'" method="post" class=" col-md-6 pl-md-5 btn btn-warning mb-5">
+                   <button class="btn btn-warning" type="submit">Remove</button>
+               </form>
                <p th:text="${el.views}"></p>
            </div>
        </div>

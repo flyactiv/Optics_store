@@ -49,5 +49,38 @@ public class BlogController {
         return "blogDetails";
     }
 
+    @GetMapping("/about/{id}/edit")       //Контроллер для отслеживания url страницы для добавления постов в блог web-ресурса
+    public String editBlog(@PathVariable(value = "id") long id, Model model) {
+        //if (allPostRepository.existsById(id)){ //если запись не найдена пернаправить на главную траницу блога
+          //  return "redirect:/about";
+        //}
+        model.addAttribute("title", "Редактирование статьи");
+        Optional<AllPost> post = allPostRepository.findById(id);
+        ArrayList<AllPost> res = new ArrayList<>();
+        post.ifPresent(res::add);
+        model.addAttribute("post", res);
+        return "editBlog";
+    }
+
+    @PostMapping("/about/{id}/edit") //для добаления изменений в посте и для их сохранения
+    public String editBlogUpdate(@PathVariable(value = "id") long id, @RequestParam String title, @RequestParam String anons, @RequestParam String full_text, Model model){
+        AllPost post = allPostRepository.findById(id).orElseThrow();
+        post.setTitle(title);
+        post.setAnons(anons);
+        post.setFull_text(full_text);
+        allPostRepository.save(post);
+        return "redirect:/about";
+    }
+
+    @PostMapping("/about/{id}/remove")       //Контроллер для отслеживания url страницы для добавления постов в блог web-ресурса
+    public String removeBlog(@PathVariable(value = "id") long id, Model model) {
+        //if (allPostRepository.existsById(id)){ //если запись не найдена пернаправить на главную траницу блога
+        //  return "redirect:/about";
+        //}
+        AllPost post = allPostRepository.findById(id).orElseThrow();
+        allPostRepository.delete(post);
+        return "redirect:/about";
+    }
+
 
 }

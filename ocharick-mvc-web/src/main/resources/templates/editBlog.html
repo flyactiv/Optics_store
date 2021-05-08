@@ -79,6 +79,9 @@
                 <textarea th:text="${el.full_text}" name="full_text" placeholder="Add a full text of post" class="form-control"></textarea> <br>
                 <button type="submit" class="btn btn-success">Update</button>
             </form>
+            <form th:action="'/about/' + ${el.id} + '/remove'" method="post">
+                <button class="btn btn-warning" type="submit">Remove</button>
+            </form>
         </div>
     </div>
 </div>

@@ -73,7 +73,7 @@
     <div class="container mt-5 mb-5">
         <div th:each="el:${post}">
             <h2>Добавление статьи</h2>>
-            <form method="post">
+            <form th:action="edit" method="post">
                 <input th:text="${el.title}" name="title" placeholder="Add a name of post" class="form-control"><br>
                 <input th:text="${el.anons}" name="anons" placeholder="Add a anons text of post" class="form-control"> <br>
                 <textarea th:text="${el.full_text}" name="full_text" placeholder="Add a full text of post" class="form-control"></textarea> <br>

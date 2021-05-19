@@ -73,7 +73,7 @@
 <div class="container">
     <div class="container mt-5 mb-5">
         <h2>Добавление статьи</h2>>
-        <form action="/addPost" method="post">
+        <form th:action="addPost" method="post">
             <input type="text" name="title" placeholder="Add a name of post" class="form-control"><br>
             <input type="text" name="anons" placeholder="Add a anons text of post" class="form-control"> <br>
             <textarea name="full_text" placeholder="Add a full text of post" class="form-control"></textarea> <br>

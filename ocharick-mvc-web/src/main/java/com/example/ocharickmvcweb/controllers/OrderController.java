@@ -1,0 +1,28 @@
+package com.example.ocharickmvcweb.controllers;
+
+import com.example.ocharickmvcweb.models.NewOrders;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@Controller
+public class OrderController {
+    @Autowired
+    private com.example.ocharickmvcweb.repo.orderRepository orderRepository;
+
+    @GetMapping("/checkout")       //Контроллер для отслеживания url страницы контактов web-ресурса
+    public String checkout(Model model) {
+        return "checkout";
+    }
+
+    @PostMapping("/work")       //Контроллер для отслеживания url страницы контактов web-ресурса
+    public String orderAdd(@RequestParam String orderDetail, @RequestParam String email, @RequestParam String name, Model model) {
+        NewOrders newOrders = new NewOrders(orderDetail,email,name);
+        orderRepository.save(newOrders);
+        return "checkout";
+    }
+
+}

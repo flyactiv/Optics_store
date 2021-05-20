@@ -63,7 +63,7 @@ function openCart(e){
             }
             totalSum += cartData[items][1] * cartData[items][2];
             totalCount += cartData[items][2];
-            totalItems += '<td><span class="del_item" data-id="'+ items +'">X</span></td>';
+            totalItems += '<td class="bg-danger"><span class="del_item" data-id="'+ items +'">X</span></td>';
             totalItems += '</tr>';
         }
         totalItems += '<tr><td><strong>Total</strong></td><td><span id="total_sum">'+ totalSum +'</span> $</td><td><span id="total_count">'+ totalCount +'</span> pieces</td><td></td></tr>';

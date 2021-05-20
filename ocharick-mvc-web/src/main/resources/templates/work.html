@@ -90,7 +90,7 @@
         <p><button id="checkout"></button> &nbsp;
         <div class="ml-5 mr-5" id="cart_content"></div>
         <div>
-            <div class="text-left ml-5"><button class="btn btn-lg btn-warning" id="clear_cart">Clear Cart</button></p></div>
+            <div class="text-right mr-5"><button class="btn btn-lg btn-warning" id="clear_cart">Clear Cart</button></p></div>
         </div>
     </section>
 
@@ -101,14 +101,14 @@
             <form th:action="work" method="post">
                 <textarea name="orderDetail" id="TextArea" style="display:none;"></textarea>
                 <label for="email"><b>Email</b></label>
-                <input type="text" placeholder="Enter Email" name="email" required>
+                <input class="border form-control" type="text" placeholder="some@some.com" name="email" required>
 
                 <label for="phone"><b>Phone</b></label>
-                <input type="tel" placeholder="Enter Phone" name="phoneNumber" required><br><br>
+                <input class="form-control" type="tel" placeholder="8-800-555-35-55" name="phoneNumber" required><br>
 
                 <label for="name"><b>Your name</b></label>
-                <input type="text" placeholder="Enter yout name" name="name" required>
-                <hr>
+                <input class="border form-control" type="text" placeholder="Andrew" name="name" required>
+
                 <button type="submit" class="btn-success" onclick="sendValueInInput()">Checkout</button>
 
             </form>

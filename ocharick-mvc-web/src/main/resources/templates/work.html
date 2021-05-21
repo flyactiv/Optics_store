@@ -101,10 +101,10 @@
             <form th:action="work" method="post">
                 <textarea name="orderDetail" id="TextArea" style="display:none;"></textarea>
                 <label for="email"><b>Email</b></label>
-                <input class="border form-control" type="text" placeholder="some@some.com" name="email" required>
+                <input class="border form-control" type="email" placeholder="some@some.com" name="email" required>
 
                 <label for="phone"><b>Phone</b></label>
-                <input class="form-control" type="tel" placeholder="8-800-555-35-55" name="phoneNumber" required><br>
+                <input class="form-control" type="tel" required pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" placeholder="8-800-555-35-55" name="phoneNumber"><br>
 
                 <label for="name"><b>Your name</b></label>
                 <input class="border form-control" type="text" placeholder="Andrew" name="name" required>
